@@ -1,0 +1,12 @@
+# folders
+__pycache__/
+data/
+env/
+lib/
+output/
+.ipynb*
+
+# files
+.DS_Store
+*.db
+*.code-workspace
