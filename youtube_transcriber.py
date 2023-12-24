@@ -10,10 +10,11 @@ channel_id = input('Enter Youtube channel ID: ')
 output_path = f'output/{channel_username}'
 os.makedirs(output_path, exist_ok=True)
 
-# configure .env file before
 load_dotenv()
 api_key = os.getenv('API_KEY')
-print(api_key)
+if not api_key:
+    print("Error: API key not found. Please ensure it's set in the .env file.")
+    quit()
 
 youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=api_key)
 
