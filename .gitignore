@@ -4,9 +4,9 @@ data/
 *env/
 lib/
 output/
-.ipynb*
 
 # files
 .DS_Store
+.env
 *.db
 *.code-workspace

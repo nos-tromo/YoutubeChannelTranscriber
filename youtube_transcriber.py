@@ -1,15 +1,19 @@
 import os
 
+from dotenv import load_dotenv
 import googleapiclient.discovery
 import googleapiclient.errors
 from youtube_transcript_api import YouTubeTranscriptApi
 
 channel_username = input('Enter Youtube channel username: ')
 channel_id = input('Enter Youtube channel ID: ')
-api_key = input('Enter your API key: ')
-
 output_path = f'output/{channel_username}'
 os.makedirs(output_path, exist_ok=True)
+
+# configure .env file before
+load_dotenv()
+api_key = os.getenv('API_KEY')
+print(api_key)
 
 youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey=api_key)
 
